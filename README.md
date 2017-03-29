@@ -31,7 +31,8 @@
     jupyter notebook
 2. This will open a jupyter dashboard.
 3. Upload **simple_progress_bar.ipynb** file using the Upload button on the top right corner of the dashboard.
-4. Run each cell using **Shift + Enter**.
-5. To see the progress bar working, you can increase the range value in the code on In[33] cell.
+4. Open the uploaded the notebook file.
+5. Run each cell using **Shift + Enter**.
+6. To see the progress bar working, you can increase the range value in the code on In[33] cell.
 
 
