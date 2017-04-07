@@ -18,7 +18,7 @@ conf = ( SparkConf()
 sc = SparkContext(conf=conf)
 
 
-# In[31]:
+# In[3]:
 
 from IPython.core.display import display
 import urllib, json
@@ -78,7 +78,7 @@ def create_html():
     
 
 
-# In[32]:
+# In[4]:
 
 def cal(l):
     def call():
@@ -98,6 +98,15 @@ def cal(l):
 cal(range(1,20000000))
 
 
-# In[ ]:
+# In[5]:
+#Sync calculations
+def sync_cal(l):
+    ss = sc.parallelize(l,4)
+    jobs = backgroundjobs.BackgroundJobManager()
+    jobs.new(create_html)
+    return ss.reduce(lambda x,y: x+y)
 
 
+# In[6]:
+
+sync_cal(range(1,20000000))
